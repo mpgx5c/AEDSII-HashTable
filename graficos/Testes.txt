@@ -1,50 +1,49 @@
-Teste: Entrada.txt
+Teste: teste25.txt
 Média de Custo Total: 0.6993006993006993
 Quantidade Elementos: 143
 Quantidade de ADD:68
 Quantidade de DEL:75
 Custo Remover: 19
 Custo Inserir: 81
-Tempo de Execução: Tempo de Execução: 0.005300045013427734 sec
+Tempo de Execução: Tempo de Execução: 0.008294820785522461 sec
 --------------------------------------------------
 
-Teste: Entrada.txt
+Teste: teste25.txt
 Média de Custo Total: 0.5703125
 Quantidade Elementos: 128
 Quantidade de ADD:56
 Quantidade de DEL:72
 Custo Remover: 11
 Custo Inserir: 62
-Tempo de Execução: Tempo de Execução: 0.004881381988525391 sec
+Tempo de Execução: Tempo de Execução: 0.0072994232177734375 sec
 --------------------------------------------------
 
-Teste: Entrada.txt
+Teste: teste25.txt
 Média de Custo Total: 0.6902654867256637
 Quantidade Elementos: 113
 Quantidade de ADD:59
 Quantidade de DEL:54
 Custo Remover: 13
 Custo Inserir: 65
-Tempo de Execução: Tempo de Execução: 0.004431962966918945 sec
+Tempo de Execução: Tempo de Execução: 0.004866838455200195 sec
 --------------------------------------------------
 
-Teste: Entrada.txt
+Teste: teste25.txt
 Média de Custo Total: 0.5918367346938775
 Quantidade Elementos: 49
 Quantidade de ADD:26
 Quantidade de DEL:23
 Custo Remover: 2
 Custo Inserir: 27
-Tempo de Execução: Tempo de Execução: 0.0024595260620117188 sec
+Tempo de Execução: Tempo de Execução: 0.0031290054321289062 sec
 --------------------------------------------------
 
-Teste: Entrada.txt
+Teste: teste25.txt
 Média de Custo Total: 1.0727272727272728
 Quantidade Elementos: 110
 Quantidade de ADD:63
 Quantidade de DEL:47
 Custo Remover: 8
 Custo Inserir: 110
-Tempo de Execução: Tempo de Execução: 0.005137205123901367 sec
+Tempo de Execução: Tempo de Execução: 0.005690813064575195 sec
 --------------------------------------------------
-

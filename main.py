@@ -103,7 +103,7 @@ def Inserir(Chave):
 
 def TrataColisoes(Chave):
 
-    for Index in range(1, 19):
+    for Index in range(1, 20):
         HashKey = Hash(Chave) + (Index ** 2) + (23 * Index)
         HashKey = HashKey % len(hash_table)
         if VerificaPosicaoValida(HashKey):
