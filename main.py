@@ -6,10 +6,6 @@ import time
 def Inicializa(numeroDeSlots):
     return [[] for _ in range(numeroDeSlots)]
 
-# DEPOIS FAZER ESSA FUNÇÂO, NÂO UTILIZAR FUNÇÂO PRONTA, LEMBRAR SEMPRE!
-# Soma o AscII dos caracteres da String
-
-
 def Hash(Chave):
     Som = 0
     Conta = 1
@@ -18,12 +14,8 @@ def Hash(Chave):
         Conta += 1
     return Som * 19
 
-# Calcula Hash
-
-
 def MakeHash(Chave):
     return Hash(Chave) % len(hash_table)
-
 
 def ArquivoSaida(Saida):
 
@@ -39,13 +31,11 @@ def ArquivoSaida(Saida):
             Saida.write(str(Local)+':'+str(Slot) + '\n')
         Local += 1
 
-
 def Pesquisar(Chave):
 
     HashKey = MakeHash(Chave)
 
     if hash_table[HashKey] == Chave:
-        #print("Achou ["+str(HashKey)+":"+Chave+"]")
         return True, HashKey, 1  # 1 É o custo da pesquisa, ou seja O(1)
     else:
         for Index in range(1, 19):
@@ -53,11 +43,8 @@ def Pesquisar(Chave):
             HashKey = HashKey % len(hash_table)
 
             if hash_table[HashKey] == Chave:
-                #print("Achou ["+str(HashKey)+":"+Chave+"]")
-                # (Index + 1) É o custo da pesquisa, ou seja O(n + 1)
                 return True, HashKey, (Index + 1)
     return False, None, 0
-
 
 def Remover(Chave):
 
@@ -70,12 +57,10 @@ def Remover(Chave):
         print("Chave Não Existe [" + Chave + "]")
         return Custo
 
-
 def Inserir(Chave):
 
     if VerificaTamanhoString(Chave):
         return 0
-
     HashKey = MakeHash(Chave)
     Bucket = hash_table[HashKey]
 
@@ -97,33 +82,27 @@ def Inserir(Chave):
             return Custo
         else:
             print("Impossível Inserir ["+Chave+"] . . .")
-
     return 0
-
 
 def TrataColisoes(Chave):
 
     for Index in range(1, 20):
         HashKey = Hash(Chave) + (Index ** 2) + (23 * Index)
         HashKey = HashKey % len(hash_table)
-        if VerificaPosicaoValida(HashKey):
-            # Um pois ni primeiro acesso já conta como O(1) + n
+        if VerificaPosicaoValida(HashKey):  # Um pois ni primeiro acesso já conta como O(1) + n
             return True, HashKey, Index + 1
     return False, None, 0  # Ultimo parâmetro é o total de acessos à tabela.
-
 
 def VerificaPosicaoValida(HashKey):
     if hash_table[HashKey] == []:
         return True
     return False
 
-
 def VerificaTamanhoString(Chave):
     if len(Chave) > 15:  # Condição específica do Trabalho
         print("Chave Inválida! [" + Chave + "]")
         return True
     return False
-
 
 def writeTests(MediaCustoTotal, QtdADD, QtdDEL, CustoRemover, CustoInserir, FILE, Tempo, Name, QtdLinhas):
 
@@ -149,7 +128,6 @@ if __name__ == "__main__":
     for Index in range(QtdTestes):
 
         timeInit = time.time()  # Tempo inicial
-
         hash_table = Inicializa(101)  # A cada novo laço
 
         RemoverCusto = 0
@@ -175,8 +153,6 @@ if __name__ == "__main__":
                     InserirCusto,Testes, 
                     counttime.Count(timeInit, time.time()), 
                     sys.argv[1], QtdLinhas)
-        
         ArquivoSaida(Saida)
-
     Entrada.close
     Saida.close
