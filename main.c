@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+
 #define TAMANHO_HT 101
 
 typedef struct
@@ -73,7 +74,6 @@ void Remover(hashTable *tabela, char *Chave)
     {
         if (strcmp(tabela[hash].Chave, Chave) == 0)
         {
-            printf("%s - Encontrado!\n", Chave);
             strcpy(tabela[hash].Chave, "");
             return;
         }
@@ -88,15 +88,12 @@ void Remover(hashTable *tabela, char *Chave)
 
                 if (strcmp(tabela[hash].Chave, Chave) == 0)
                 {
-                    printf("%s - Encontrado! [Remake]\n", Chave);
                     strcpy(tabela[hash].Chave, "");
                     return;
                 }
             }
         }
     }
-    printf("%s - Elemento não existe!\n", Chave);
-    return;
 }
 void Listar(FILE *fileSaida, hashTable *tabela, const int Tamanho)
 {
@@ -121,7 +118,7 @@ int main(int argc, char const *argv[])
     char *flag = (char *)calloc(sizeof(char), 15);
 
     fscanf(Entrada, "%d", &Testes);
-    printf(">> %d\n", Testes);
+
     for (int k = 0; k < Testes; k++)
     {
         obj = criaTabela(TAMANHO_HT);
